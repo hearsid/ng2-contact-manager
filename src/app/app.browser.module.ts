@@ -4,6 +4,7 @@ import { UniversalModule, isBrowser, isNode } from 'angular2-universal/browser';
 
 import { HomeModule } from './home/home.module';
 import { AboutModule } from './about/about.module';
+import { ContactsModule } from './contacts/contacts.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Cache } from './universal-cache';
@@ -17,6 +18,7 @@ import { Cache } from './universal-cache';
 
     HomeModule,
     AboutModule,
+    ContactsModule,
 
     AppRoutingModule
   ],

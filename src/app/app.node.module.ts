@@ -14,6 +14,7 @@ import { AboutModule } from './about/about.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Cache } from './universal-cache';
+import {ContactsModule} from "./contacts/contacts.module";
 
 @NgModule({
   bootstrap: [ AppComponent ],
@@ -24,6 +25,7 @@ import { Cache } from './universal-cache';
 
     HomeModule,
     AboutModule,
+    ContactsModule,
 
     AppRoutingModule
   ],

@@ -1,0 +1,30 @@
+<h2 class="page-header text-center">{{title}} Contact</h2>
+<form role="form" class="form-horizontal contract-form">
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Full name:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control contact-name-input" ng-model="name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Email address:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control contact-email-input" ng-model="email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-sm-4 control-label">Telephone number:</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control contact-tel-input" ng-model="tel">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-3">
+            <button ng-show="title=='Add'" type="submit" ng-click="addContact(name,email,tel)" class="btn btn-outline btn-lg btn-block">Submit</button>
+            <button ng-show="title=='Edit'" type="submit" ng-click="editContact(id , name , email , tel)" class="btn btn-outline btn-lg btn-block">Submit</button>
+        </div>
+        <div class="col-sm-3">
+            <a ui-sref="home" class="btn btn-outline btn-lg btn-block">Cancel</a>
+        </div>
+    </div>
+</form>
