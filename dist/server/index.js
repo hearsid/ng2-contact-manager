@@ -62,7 +62,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/Users/siddharthsharma/Documents/repos/ng2-contacts-manager";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 29);
+/******/ 	return __webpack_require__(__webpack_require__.s = 33);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -124,7 +124,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var contact_service_1 = __webpack_require__(30);
+var contact_service_1 = __webpack_require__(19);
 var ContactsComponent = (function () {
     function ContactsComponent(contactService) {
         this.contactService = contactService;
@@ -132,7 +132,7 @@ var ContactsComponent = (function () {
     }
     ContactsComponent.prototype.getContacts = function () {
         var _this = this;
-        this.contactService.getContacts().then(function (contacts) { return _this.contacts = contacts; });
+        this.contactService.getContacts().then(function (contacts) { _this.contacts = contacts; });
     };
     ContactsComponent.prototype.ngOnInit = function () {
         this.getContacts();
@@ -143,7 +143,7 @@ var ContactsComponent = (function () {
     ContactsComponent = __decorate([
         core_1.Component({
             selector: 'contacts',
-            template: __webpack_require__(25),
+            template: __webpack_require__(30),
             providers: [contact_service_1.ContactService]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof contact_service_1.ContactService !== 'undefined' && contact_service_1.ContactService) === 'function' && _a) || Object])
@@ -187,6 +187,12 @@ exports.HomeComponent = HomeComponent;
 
 /***/ },
 /* 5 */
+/***/ function(module, exports) {
+
+module.exports = require("@angular/platform-browser");
+
+/***/ },
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -201,19 +207,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 // Fix Material Support
-var platform_browser_1 = __webpack_require__(27);
+var platform_browser_1 = __webpack_require__(5);
 function universalMaterialSupports(eventName) { return Boolean(this.isCustomEvent(eventName)); }
 platform_browser_1.__platform_browser_private__.HammerGesturesPlugin.prototype.supports = universalMaterialSupports;
 // End Fix Material Support
 var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(26);
-var node_1 = __webpack_require__(28); // for AoT we need to manually split universal packages
-var home_module_1 = __webpack_require__(20);
-var about_module_1 = __webpack_require__(14);
-var app_component_1 = __webpack_require__(16);
-var app_routing_module_1 = __webpack_require__(15);
-var universal_cache_1 = __webpack_require__(21);
-var contacts_module_1 = __webpack_require__(18);
+var forms_1 = __webpack_require__(31);
+var node_1 = __webpack_require__(32); // for AoT we need to manually split universal packages
+var home_module_1 = __webpack_require__(24);
+var about_module_1 = __webpack_require__(15);
+var app_component_1 = __webpack_require__(17);
+var app_routing_module_1 = __webpack_require__(16);
+var universal_cache_1 = __webpack_require__(25);
+var contacts_module_1 = __webpack_require__(22);
 var MainModule = (function () {
     function MainModule(cache) {
         var _this = this;
@@ -253,14 +259,14 @@ exports.MainModule = MainModule;
 
 
 /***/ },
-/* 6 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
 "use strict";
 // Our API for demos only
-var db_1 = __webpack_require__(23);
-var cache_1 = __webpack_require__(22);
+var db_1 = __webpack_require__(27);
+var cache_1 = __webpack_require__(26);
 // you would use cookies/token etc
 var USER_ID = 'f9d98cf1-1b96-464e-8755-bcc2a5c09077'; // hardcoded as an example
 // Our API for demos only
@@ -283,43 +289,43 @@ exports.serverApi = serverApi;
 
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports) {
 
 module.exports = require("angular2-express-engine");
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports) {
 
 module.exports = require("angular2-universal-polyfills");
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 module.exports = require("body-parser");
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports) {
 
 module.exports = require("cookie-parser");
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports) {
 
 module.exports = require("express");
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports) {
 
 module.exports = require("path");
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -358,7 +364,7 @@ exports.AboutRoutingModule = AboutRoutingModule;
 
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -374,7 +380,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var about_component_1 = __webpack_require__(2);
-var about_routing_module_1 = __webpack_require__(13);
+var about_routing_module_1 = __webpack_require__(14);
 var AboutModule = (function () {
     function AboutModule() {
     }
@@ -395,7 +401,7 @@ exports.AboutModule = AboutModule;
 
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -433,7 +439,7 @@ exports.AppRoutingModule = AppRoutingModule;
 
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -454,7 +460,7 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app',
-            template: __webpack_require__(24)
+            template: __webpack_require__(28)
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
@@ -464,7 +470,132 @@ exports.AppComponent = AppComponent;
 
 
 /***/ },
-/* 17 */
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var router_1 = __webpack_require__(1);
+var contact_1 = __webpack_require__(34);
+var contact_service_1 = __webpack_require__(19);
+var ContactComponent = (function () {
+    function ContactComponent(contactService, route) {
+        this.contactService = contactService;
+        this.route = route;
+        this.close = new core_1.EventEmitter();
+        this.navigated = false; // true if navigated here
+    }
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', (typeof (_a = typeof contact_1.Contact !== 'undefined' && contact_1.Contact) === 'function' && _a) || Object)
+    ], ContactComponent.prototype, "contact", void 0);
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], ContactComponent.prototype, "close", void 0);
+    ContactComponent = __decorate([
+        core_1.Component({
+            selector: 'contact',
+            template: __webpack_require__(29),
+        }), 
+        __metadata('design:paramtypes', [(typeof (_b = typeof contact_service_1.ContactService !== 'undefined' && contact_service_1.ContactService) === 'function' && _b) || Object, (typeof (_c = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _c) || Object])
+    ], ContactComponent);
+    return ContactComponent;
+    var _a, _b, _c;
+}());
+exports.ContactComponent = ContactComponent;
+
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var mock_contacts_1 = __webpack_require__(20);
+var ContactService = (function () {
+    function ContactService() {
+    }
+    ContactService.prototype.getContacts = function () {
+        return Promise.resolve(mock_contacts_1.CONTACTS);
+    };
+    ContactService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], ContactService);
+    return ContactService;
+}());
+exports.ContactService = ContactService;
+
+
+/***/ },
+/* 20 */
+/***/ function(module, exports) {
+
+"use strict";
+"use strict";
+exports.CONTACTS = [
+    {
+        id: 1,
+        name: 'Terrence S. Hatfield',
+        tel: '651-603-1723',
+        email: 'TerrenceSHatfield@rhyta.com'
+    },
+    {
+        id: 2,
+        name: 'Chris M. Manning',
+        tel: '513-307-5859',
+        email: 'ChrisMManning@dayrep.com'
+    },
+    {
+        id: 3,
+        name: 'Ricky M. Digiacomo',
+        tel: '918-774-0199',
+        email: 'RickyMDigiacomo@teleworm.us'
+    },
+    {
+        id: 4,
+        name: 'Michael K. Bayne',
+        tel: '702-989-5145',
+        email: 'MichaelKBayne@rhyta.com'
+    },
+    {
+        id: 5,
+        name: 'John I. Wilson',
+        tel: '318-292-6700',
+        email: 'JohnIWilson@dayrep.com'
+    },
+    {
+        id: 6,
+        name: 'Rodolfo P. Robinett',
+        tel: '803-557-9815',
+        email: 'RodolfoPRobinett@jourrapide.com'
+    }
+];
+
+
+/***/ },
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -503,7 +634,7 @@ exports.ContactsRoutingModule = ContactsRoutingModule;
 
 
 /***/ },
-/* 18 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -518,10 +649,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var platform_browser_1 = __webpack_require__(27);
+var platform_browser_1 = __webpack_require__(5);
 var contacts_component_ts_1 = __webpack_require__(3);
-var contacts_routing_module_1 = __webpack_require__(17);
-var contact_component_1 = __webpack_require__(32);
+var contacts_routing_module_1 = __webpack_require__(21);
+var contact_component_1 = __webpack_require__(18);
 var ContactsModule = (function () {
     function ContactsModule() {
     }
@@ -544,7 +675,7 @@ exports.ContactsModule = ContactsModule;
 
 
 /***/ },
-/* 19 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -583,7 +714,7 @@ exports.HomeRoutingModule = HomeRoutingModule;
 
 
 /***/ },
-/* 20 */
+/* 24 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -599,7 +730,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var home_component_1 = __webpack_require__(4);
-var home_routing_module_1 = __webpack_require__(19);
+var home_routing_module_1 = __webpack_require__(23);
 var HomeModule = (function () {
     function HomeModule() {
     }
@@ -620,7 +751,7 @@ exports.HomeModule = HomeModule;
 
 
 /***/ },
-/* 21 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -707,7 +838,7 @@ exports.Cache = Cache;
 
 
 /***/ },
-/* 22 */
+/* 26 */
 /***/ function(module, exports) {
 
 "use strict";
@@ -730,7 +861,7 @@ exports.fakeDemoRedisCache = {
 
 
 /***/ },
-/* 23 */
+/* 27 */
 /***/ function(module, exports) {
 
 "use strict";
@@ -745,37 +876,37 @@ exports.fakeDataBase = {
 
 
 /***/ },
-/* 24 */
+/* 28 */
 /***/ function(module, exports) {
 
 module.exports = "<header class=\"bs-header\">\n    <div class=\"container\">\n      <h1>Contact Manager</h1>\n      <p>Simple Angular2 example application</p>\n    </div>\n  </header>\n  <div class=\"container\">\n    <div class=\"row\">\n      <div class=\"col-xs-12 main-container\">\n          <router-outlet></router-outlet>\n      </div>\n    </div>\n  </div>\n"
 
 /***/ },
-/* 25 */
+/* 29 */
 /***/ function(module, exports) {
 
-module.exports = "<h2 class=\"page-header text-center\">{{title}}</h2>\n<p class=\"text-center\">\n    <a ui-sref=\"add\" class=\"btn btn-lg btn-outline\" >Add Contact</a>\n</p>\n<ul class=\"media-list row contacts-container\">\n    <li *ngFor=\"let contact of contacts\" class=\"my-repeat-animation contacts media col-md-6 col-lg-4\">\n        {{contact}}\n        <contact></contact>\n\n    </li>\n</ul>\n"
+module.exports = "<div class=\"thumbnail\">\n    <img class=\"media-object contact-image\" src=\"assets/img/faces/{{contact.id}}.jpg\">\n</div>\n<div class=\"media-heading\">\n    <h3>\n        {{contact.name}}\n        <small>\n            <a ui-sref=\"edit({id:contact.id})\"><span class=\"glyphicon glyphicon-pencil\"></span></a>\n            <a ng-click=\"deleteContact($index)\" class=\"delete-contract\">\n                <span class=\"glyphicon glyphicon-trash\"></span>\n            </a>\n        </small>\n    </h3>\n</div>\n<div class=\"media-body\">\n    <dl>\n        <dt>[Phone Number]</dt>\n        <dd >{{contact.tel}}</dd>\n        <dt>[Email]</dt>\n        <dd >{{contact.email}}</dd>\n    </dl>\n</div>\n<hr>"
 
 /***/ },
-/* 26 */
+/* 30 */
+/***/ function(module, exports) {
+
+module.exports = "<h2 class=\"page-header text-center\">{{title}}</h2>\n<p class=\"text-center\">\n    <a ui-sref=\"add\" class=\"btn btn-lg btn-outline\" >Add Contact</a>\n</p>\n<ul class=\"media-list row contacts-container\">\n    <li *ngFor=\"let contact of contacts\" class=\"my-repeat-animation contacts media col-md-6 col-lg-4\">\n        {{contact.id}}\n        <contact [contact]=\"contact\"></contact>\n\n    </li>\n</ul>\n"
+
+/***/ },
+/* 31 */
 /***/ function(module, exports) {
 
 module.exports = require("@angular/forms");
 
 /***/ },
-/* 27 */
-/***/ function(module, exports) {
-
-module.exports = require("@angular/platform-browser");
-
-/***/ },
-/* 28 */
+/* 32 */
 /***/ function(module, exports) {
 
 module.exports = require("angular2-universal/node");
 
 /***/ },
-/* 29 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -783,15 +914,15 @@ module.exports = require("angular2-universal/node");
 // the polyfills must be one of the first things imported in node.js.
 // The only modules to be imported higher - node modules with es6-promise 3.x or other Promise polyfill dependency
 // (rule of thumb: do it if you have zone.js exception that it has been overwritten)
-__webpack_require__(8);
-var path = __webpack_require__(12);
-var express = __webpack_require__(11);
-var bodyParser = __webpack_require__(9);
-var cookieParser = __webpack_require__(10);
+__webpack_require__(9);
+var path = __webpack_require__(13);
+var express = __webpack_require__(12);
+var bodyParser = __webpack_require__(10);
+var cookieParser = __webpack_require__(11);
 // Angular 2 Universal
-var angular2_express_engine_1 = __webpack_require__(7);
+var angular2_express_engine_1 = __webpack_require__(8);
 // App
-var app_node_module_1 = __webpack_require__(5);
+var app_node_module_1 = __webpack_require__(6);
 // enable prod for faster renders
 // enableProdMode();
 var app = express();
@@ -808,7 +939,7 @@ app.use(bodyParser.json());
 // Serve static files
 app.use('/assets', express.static(path.join(__dirname, 'assets'), { maxAge: 30 }));
 app.use(express.static(path.join(ROOT, 'dist/client'), { index: false }));
-var api_1 = __webpack_require__(6);
+var api_1 = __webpack_require__(7);
 // Our API for demos only
 app.get('/data.json', api_1.serverApi);
 function ngApp(req, res) {
@@ -844,119 +975,18 @@ var server = app.listen(process.env.PORT || 3000, function () {
 /* WEBPACK VAR INJECTION */}.call(exports, "src"))
 
 /***/ },
-/* 30 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var mock_contacts_1 = __webpack_require__(31);
-var ContactService = (function () {
-    function ContactService() {
-    }
-    ContactService.prototype.getContacts = function () {
-        return Promise.resolve(mock_contacts_1.CONTACTS);
-    };
-    ContactService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], ContactService);
-    return ContactService;
-}());
-exports.ContactService = ContactService;
-
-
-/***/ },
-/* 31 */
+/* 34 */
 /***/ function(module, exports) {
 
 "use strict";
 "use strict";
-exports.CONTACTS = [
-    {
-        id: 1,
-        name: 'Terrence S. Hatfield',
-        tel: '651-603-1723',
-        email: 'TerrenceSHatfield@rhyta.com'
-    },
-    {
-        id: 2,
-        name: 'Chris M. Manning',
-        tel: '513-307-5859',
-        email: 'ChrisMManning@dayrep.com'
-    },
-    {
-        id: 3,
-        name: 'Ricky M. Digiacomo',
-        tel: '918-774-0199',
-        email: 'RickyMDigiacomo@teleworm.us'
-    },
-    {
-        id: 4,
-        name: 'Michael K. Bayne',
-        tel: '702-989-5145',
-        email: 'MichaelKBayne@rhyta.com'
-    },
-    {
-        id: 5,
-        name: 'John I. Wilson',
-        tel: '318-292-6700',
-        email: 'JohnIWilson@dayrep.com'
-    },
-    {
-        id: 6,
-        name: 'Rodolfo P. Robinett',
-        tel: '803-557-9815',
-        email: 'RodolfoPRobinett@jourrapide.com'
+var Contact = (function () {
+    function Contact() {
     }
-];
-
-
-/***/ },
-/* 32 */
-/***/ function(module, exports, __webpack_require__) {
-
-"use strict";
-"use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var ContactComponent = (function () {
-    function ContactComponent() {
-    }
-    ContactComponent = __decorate([
-        core_1.Component({
-            selector: 'contact',
-            template: __webpack_require__(33),
-        }), 
-        __metadata('design:paramtypes', [])
-    ], ContactComponent);
-    return ContactComponent;
+    return Contact;
 }());
-exports.ContactComponent = ContactComponent;
+exports.Contact = Contact;
 
-
-/***/ },
-/* 33 */
-/***/ function(module, exports) {
-
-module.exports = "<div class=\"thumbnail\">\n    <img class=\"media-object contact-image\" src=\"app/img/faces/{{contact.id}}.jpg\">\n</div>\n<div class=\"media-heading\">\n    <h3>\n        {{contact.name}}\n        <small>\n            <a ui-sref=\"edit({id:contact.id})\"><span class=\"glyphicon glyphicon-pencil\"></span></a>\n            <a ng-click=\"deleteContact($index)\" class=\"delete-contract\">\n                <span class=\"glyphicon glyphicon-trash\"></span>\n            </a>\n        </small>\n    </h3>\n</div>\n<div class=\"media-body\">\n    <dl>\n        <dt>[Phone Number]</dt>\n        <dd ng-bind=\"contact.tel\"></dd>\n        <dt>[Email]</dt>\n        <dd ng-bind=\"contact.email\"></dd>\n    </dl>\n</div>\n<hr>"
 
 /***/ }
 /******/ ]);

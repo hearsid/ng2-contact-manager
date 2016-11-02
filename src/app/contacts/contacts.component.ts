@@ -13,7 +13,7 @@ export class ContactsComponent implements OnInit{
     selectedContact: Contact;
     constructor(private contactService: ContactService) { }
     getContacts(): void {
-        this.contactService.getContacts().then(contacts => this.contacts = contacts);
+        this.contactService.getContacts().then(contacts => { this.contacts = contacts });
     }
     ngOnInit(): void {
         this.getContacts();
