@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { ContactsComponent } from './contacts.component.ts';
 import { ContactsRoutingModule } from './contacts-routing.module';
+import {ContactComponent} from "../contact/contact.component";
 
 @NgModule({
     imports: [
@@ -10,7 +11,8 @@ import { ContactsRoutingModule } from './contacts-routing.module';
         BrowserModule
     ],
     declarations: [
-        ContactsComponent
+        ContactsComponent,
+        ContactComponent
     ]
 })
 export class ContactsModule { }

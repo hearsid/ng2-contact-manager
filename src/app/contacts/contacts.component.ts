@@ -4,9 +4,9 @@ import { ContactService } from '../contact/contact.service';
 @Component({
     selector: 'contacts',
     templateUrl: 'contacts.html',
-
+    providers:[ContactService]
 })
-export class ContactsComponent {
+export class ContactsComponent implements OnInit{
 
     title = 'List of contacts';
     contacts: Contact[];

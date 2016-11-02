@@ -6,7 +6,7 @@ import { enableProdMode} from '@angular/core';
 import { platformUniversalDynamic } from 'angular2-universal';
 
 // enable prod for faster renders
-enableProdMode();
+// enableProdMode();
 
 import { MainModule } from './app/app.browser.module';
 

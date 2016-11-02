@@ -51582,6 +51582,7 @@ var ContactsComponent = (function () {
         core_1.Component({
             selector: 'contacts',
             template: __webpack_require__(511),
+            providers: [contact_service_1.ContactService]
         }), 
         __metadata('design:paramtypes', [(typeof (_a = typeof contact_service_1.ContactService !== 'undefined' && contact_service_1.ContactService) === 'function' && _a) || Object])
     ], ContactsComponent);
@@ -68657,6 +68658,7 @@ var core_1 = __webpack_require__(0);
 var platform_browser_1 = __webpack_require__(165);
 var contacts_component_ts_1 = __webpack_require__(287);
 var contacts_routing_module_1 = __webpack_require__(451);
+var contact_component_1 = __webpack_require__(554);
 var ContactsModule = (function () {
     function ContactsModule() {
     }
@@ -68667,7 +68669,8 @@ var ContactsModule = (function () {
                 platform_browser_1.BrowserModule
             ],
             declarations: [
-                contacts_component_ts_1.ContactsComponent
+                contacts_component_ts_1.ContactsComponent,
+                contact_component_1.ContactComponent
             ]
         }), 
         __metadata('design:paramtypes', [])
@@ -82195,7 +82198,7 @@ module.exports = "<header class=\"bs-header\">\n    <div class=\"container\">\n 
 /* 511 */
 /***/ function(module, exports) {
 
-module.exports = "<h2 class=\"page-header text-center\">{{title}}</h2>\n<p class=\"text-center\">\n    <a ui-sref=\"add\" class=\"btn btn-lg btn-outline\" >Add Contact</a>\n</p>\n<ul class=\"media-list row contacts-container\">\n    <li *ngFor=\"let contact of contacts\" class=\"my-repeat-animation contacts media col-md-6 col-lg-4\">\n        {{contact.id}}\n<!--\n        <contact></contact>\n-->\n    </li>\n</ul>\n"
+module.exports = "<h2 class=\"page-header text-center\">{{title}}</h2>\n<p class=\"text-center\">\n    <a ui-sref=\"add\" class=\"btn btn-lg btn-outline\" >Add Contact</a>\n</p>\n<ul class=\"media-list row contacts-container\">\n    <li *ngFor=\"let contact of contacts\" class=\"my-repeat-animation contacts media col-md-6 col-lg-4\">\n        {{contact}}\n        <contact></contact>\n\n    </li>\n</ul>\n"
 
 /***/ },
 /* 512 */
@@ -87024,11 +87027,9 @@ if (_global['navigator'] && _global['navigator'].geolocation) {
 "use strict";
 // the polyfills must be the first thing imported
 __webpack_require__(326);
-// Angular 2
-var core_1 = __webpack_require__(0);
 var angular2_universal_1 = __webpack_require__(195);
 // enable prod for faster renders
-core_1.enableProdMode();
+// enableProdMode();
 var app_browser_module_1 = __webpack_require__(327);
 var platformRef = angular2_universal_1.platformUniversalDynamic();
 // on document ready bootstrap Angular 2
@@ -87114,6 +87115,43 @@ exports.CONTACTS = [
     }
 ];
 
+
+/***/ },
+/* 554 */
+/***/ function(module, exports, __webpack_require__) {
+
+"use strict";
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var ContactComponent = (function () {
+    function ContactComponent() {
+    }
+    ContactComponent = __decorate([
+        core_1.Component({
+            selector: 'contact',
+            template: __webpack_require__(555),
+        }), 
+        __metadata('design:paramtypes', [])
+    ], ContactComponent);
+    return ContactComponent;
+}());
+exports.ContactComponent = ContactComponent;
+
+
+/***/ },
+/* 555 */
+/***/ function(module, exports) {
+
+module.exports = "<div class=\"thumbnail\">\n    <img class=\"media-object contact-image\" src=\"app/img/faces/{{contact.id}}.jpg\">\n</div>\n<div class=\"media-heading\">\n    <h3>\n        {{contact.name}}\n        <small>\n            <a ui-sref=\"edit({id:contact.id})\"><span class=\"glyphicon glyphicon-pencil\"></span></a>\n            <a ng-click=\"deleteContact($index)\" class=\"delete-contract\">\n                <span class=\"glyphicon glyphicon-trash\"></span>\n            </a>\n        </small>\n    </h3>\n</div>\n<div class=\"media-body\">\n    <dl>\n        <dt>[Phone Number]</dt>\n        <dd ng-bind=\"contact.tel\"></dd>\n        <dt>[Email]</dt>\n        <dd ng-bind=\"contact.email\"></dd>\n    </dl>\n</div>\n<hr>"
 
 /***/ }
 /******/ ]);

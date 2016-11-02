@@ -2,22 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="96ef88bf-b831-4108-83a5-8dd0787b76d1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/ng2_contacts_manager_node_modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/contact/contact.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/contact/contact.service.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/contact/contact.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/contact/mock-contacts.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/contacts/contacts-routing.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/contacts/contacts.component.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/contacts/contacts.module.ts" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/new_contact/new-contact.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/contact/contact.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/client/index.js" afterPath="$PROJECT_DIR$/dist/client/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/server/index.js" afterPath="$PROJECT_DIR$/dist/server/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" afterPath="$PROJECT_DIR$/src/app/app-routing.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.browser.module.ts" afterPath="$PROJECT_DIR$/src/app/app.browser.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.node.module.ts" afterPath="$PROJECT_DIR$/src/app/app.node.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/contacts/contacts.component.ts" afterPath="$PROJECT_DIR$/src/app/contacts/contacts.component.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/contacts/contacts.html" afterPath="$PROJECT_DIR$/src/app/contacts/contacts.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/contacts/contacts.module.ts" afterPath="$PROJECT_DIR$/src/app/contacts/contacts.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client.ts" afterPath="$PROJECT_DIR$/src/client.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server.ts" afterPath="$PROJECT_DIR$/src/server.ts" />
     </list>
     <ignored path="ng2-contacts-manager.iws" />
@@ -39,23 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="app.node.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/app.node.module.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-              <folding>
-                <element signature="e#563#611#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contacts.module.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="contacts.module.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/contacts/contacts.module.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+            <state relative-caret-position="210">
+              <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -63,11 +43,21 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="contact.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/contact/contact.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="contacts.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/contacts/contacts.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="90">
+              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -75,21 +65,63 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contacts-routing.module.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/contacts/contacts-routing.module.ts">
+      <file leaf-file-name="server.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/server.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="58" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
+            <state relative-caret-position="-397">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.node.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/app.node.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contacts.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="client.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/client.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tsconfig.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contacts.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/app/contacts/contacts.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contact.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/contact/contact.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -103,46 +135,6 @@
               <folding>
                 <element signature="e#1#44#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contact.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/contact/contact.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mock-contacts.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/app/contact/mock-contacts.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="38" column="2" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="webpack.config.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webpack.config.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -167,15 +159,18 @@
         <option value="$PROJECT_DIR$/src/app/contact/contact.html" />
         <option value="$PROJECT_DIR$/src/app/new_contact/new-contact.html" />
         <option value="$PROJECT_DIR$/src/app/app-routing.module.ts" />
-        <option value="$PROJECT_DIR$/src/server.ts" />
         <option value="$PROJECT_DIR$/src/app/app.node.module.ts" />
         <option value="$PROJECT_DIR$/src/app/contacts/contacts-routing.module.ts" />
         <option value="$PROJECT_DIR$/src/app/contact/contact.ts" />
         <option value="$PROJECT_DIR$/src/app/contact/mock-contacts.ts" />
         <option value="$PROJECT_DIR$/src/app/contact/contact.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/contacts/contacts.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/contacts/contacts.html" />
+        <option value="$PROJECT_DIR$/src/app/contact/contact.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/contact/contact.module.ts" />
         <option value="$PROJECT_DIR$/src/app/contacts/contacts.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/contacts/contacts.component.ts" />
+        <option value="$PROJECT_DIR$/src/server.ts" />
+        <option value="$PROJECT_DIR$/src/client.ts" />
+        <option value="$PROJECT_DIR$/src/app/contacts/contacts.html" />
       </list>
     </option>
   </component>
@@ -448,12 +443,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1478023845548</updated>
-      <workItem from="1478023846814" duration="3268000" />
+      <workItem from="1478023846814" duration="4543000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3268000" />
+    <option name="totallyTimeSpent" value="4543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="707" extended-state="6" />
@@ -514,14 +509,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/contact/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/new_contact/new-contact.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -571,8 +558,8 @@
         <state relative-caret-position="205">
           <caret line="20" column="4" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
-            <element signature="e#226#274#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="false" />
+            <element signature="e#226#274#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -583,34 +570,6 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="61" column="18" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/app.node.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-          <folding>
-            <element signature="e#563#611#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -655,12 +614,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/contacts/contacts.component.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/contact/contact.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="7" column="30" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/contacts/contacts.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
           <folding>
-            <element signature="e#0#50#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -675,21 +642,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/contacts/contacts.html">
+    <entry file="file://$PROJECT_DIR$/src/app/contact/contact.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        <state relative-caret-position="105">
+          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/contacts/contacts.module.ts">
+    <entry file="file://$PROJECT_DIR$/src/app/contacts/contacts.component.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
+        <state relative-caret-position="90">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
           <folding>
-            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-397">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.node.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/contact/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/contacts/contacts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
