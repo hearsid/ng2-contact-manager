@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var WebpackNotifierPlugin = require('webpack-notifier');
 
 var commonConfig = {
   resolve: {
@@ -21,6 +22,8 @@ var commonConfig = {
       root('./src'),
       {}
     ),
+    new WebpackNotifierPlugin(),
+
 
     // To use gzip, you can run 'npm install compression-webpack-plugin --save-dev'
     // add 'var CompressionPlugin = require("compression-webpack-plugin");' on the top

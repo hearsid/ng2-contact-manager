@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { Contact } from '../contact/contact';
 import { ContactService } from '../contact/contact.service';
 @Component({
@@ -11,7 +13,7 @@ export class ContactsComponent implements OnInit{
     title = 'List of contacts';
     contacts: Contact[];
     selectedContact: Contact;
-    constructor(private contactService: ContactService) { }
+    constructor(private router: Router, private contactService: ContactService) { }
     getContacts(): void {
         this.contactService.getContacts().then(contacts => { this.contacts = contacts });
     }
@@ -20,5 +22,9 @@ export class ContactsComponent implements OnInit{
     }
     onSelect(contact: Contact): void {
         this.selectedContact = contact;
+    }
+
+    addContact(): void {
+      this.router.navigate(['/newContact']);
     }
 }
