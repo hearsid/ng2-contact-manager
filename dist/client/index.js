@@ -68657,12 +68657,16 @@ var router_1 = __webpack_require__(68);
 var contact_1 = __webpack_require__(453);
 var contact_service_1 = __webpack_require__(175);
 var ContactComponent = (function () {
-    function ContactComponent(contactService, route) {
+    function ContactComponent(router, contactService, route) {
+        this.router = router;
         this.contactService = contactService;
         this.route = route;
         this.close = new core_1.EventEmitter();
         this.navigated = false; // true if navigated here
     }
+    ContactComponent.prototype.edit = function () {
+        this.router.navigate(['/newContact', this.contact]);
+    };
     __decorate([
         core_1.Input(), 
         __metadata('design:type', (typeof (_a = typeof contact_1.Contact !== 'undefined' && contact_1.Contact) === 'function' && _a) || Object)
@@ -68676,10 +68680,10 @@ var ContactComponent = (function () {
             selector: 'contact',
             template: __webpack_require__(516),
         }), 
-        __metadata('design:paramtypes', [(typeof (_b = typeof contact_service_1.ContactService !== 'undefined' && contact_service_1.ContactService) === 'function' && _b) || Object, (typeof (_c = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _c) || Object])
+        __metadata('design:paramtypes', [(typeof (_b = typeof router_1.Router !== 'undefined' && router_1.Router) === 'function' && _b) || Object, (typeof (_c = typeof contact_service_1.ContactService !== 'undefined' && contact_service_1.ContactService) === 'function' && _c) || Object, (typeof (_d = typeof router_1.ActivatedRoute !== 'undefined' && router_1.ActivatedRoute) === 'function' && _d) || Object])
     ], ContactComponent);
     return ContactComponent;
-    var _a, _b, _c;
+    var _a, _b, _c, _d;
 }());
 exports.ContactComponent = ContactComponent;
 
@@ -68800,6 +68804,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = __webpack_require__(0);
 var platform_browser_1 = __webpack_require__(106);
+var forms_1 = __webpack_require__(400);
 var contacts_component_1 = __webpack_require__(288);
 var contacts_routing_module_1 = __webpack_require__(455);
 var newContactRouting_module_1 = __webpack_require__(559);
@@ -68813,7 +68818,8 @@ var ContactsModule = (function () {
             imports: [
                 contacts_routing_module_1.ContactsRoutingModule,
                 newContactRouting_module_1.NewContactRoutingModule,
-                platform_browser_1.BrowserModule
+                platform_browser_1.BrowserModule,
+                forms_1.FormsModule
             ],
             declarations: [
                 contacts_component_1.ContactsComponent,
@@ -68920,6 +68926,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
+var contact_1 = __webpack_require__(453);
 var contact_service_1 = __webpack_require__(175);
 var NewContactsComponent = (function () {
     function NewContactsComponent(contactService) {
@@ -68927,6 +68934,17 @@ var NewContactsComponent = (function () {
         this.title = 'List of contacts';
     }
     NewContactsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.route.params.forEach(function (params) {
+            if (params['contact'] !== undefined) {
+                var contact = +params['contact'];
+                _this.navigated = true;
+            }
+            else {
+                _this.navigated = false;
+                _this.contact = new contact_1.Contact();
+            }
+        });
     };
     NewContactsComponent = __decorate([
         core_1.Component({
@@ -82384,7 +82402,7 @@ module.exports = "<header class=\"bs-header\">\n    <div class=\"container\">\n 
 /* 516 */
 /***/ function(module, exports) {
 
-module.exports = "<div class=\"thumbnail\">\n    <img class=\"media-object contact-image\" src=\"assets/img/faces/{{contact.id}}.jpg\">\n</div>\n<div class=\"media-heading\">\n    <h3>\n        {{contact.name}}\n        <small>\n            <a ui-sref=\"edit({id:contact.id})\"><span class=\"glyphicon glyphicon-pencil\"></span></a>\n            <a ng-click=\"deleteContact($index)\" class=\"delete-contract\">\n                <span class=\"glyphicon glyphicon-trash\"></span>\n            </a>\n        </small>\n    </h3>\n</div>\n<div class=\"media-body\">\n    <dl>\n        <dt>[Phone Number]</dt>\n        <dd >{{contact.tel}}</dd>\n        <dt>[Email]</dt>\n        <dd >{{contact.email}}</dd>\n    </dl>\n</div>\n<hr>"
+module.exports = "<div class=\"thumbnail\">\n    <img class=\"media-object contact-image\" src=\"assets/img/faces/{{contact.id}}.jpg\">\n</div>\n<div class=\"media-heading\">\n    <h3>\n        {{contact.name}}\n        <small>\n            <a (click)=\"edit()\"><span class=\"glyphicon glyphicon-pencil\"></span></a>\n            <a ng-click=\"deleteContact($index)\" class=\"delete-contract\">\n                <span class=\"glyphicon glyphicon-trash\"></span>\n            </a>\n        </small>\n    </h3>\n</div>\n<div class=\"media-body\">\n    <dl>\n        <dt>[Phone Number]</dt>\n        <dd >{{contact.tel}}</dd>\n        <dt>[Email]</dt>\n        <dd >{{contact.email}}</dd>\n    </dl>\n</div>\n<hr>\n"
 
 /***/ },
 /* 517 */
@@ -82396,7 +82414,7 @@ module.exports = "<h2 class=\"page-header text-center\">{{title}}</h2>\n<p class
 /* 518 */
 /***/ function(module, exports) {
 
-module.exports = "<h2 class=\"page-header text-center\">{{title}} Contact</h2>\n<form role=\"form\" class=\"form-horizontal contract-form\">\n    <div class=\"form-group\">\n        <label class=\"col-sm-4 control-label\">Full name:</label>\n        <div class=\"col-sm-6\">\n            <input type=\"text\" class=\"form-control contact-name-input\" ng-model=\"name\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-4 control-label\">Email address:</label>\n        <div class=\"col-sm-6\">\n            <input type=\"text\" class=\"form-control contact-email-input\" ng-model=\"email\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-4 control-label\">Telephone number:</label>\n        <div class=\"col-sm-6\">\n            <input type=\"text\" class=\"form-control contact-tel-input\" ng-model=\"tel\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <div class=\"col-sm-offset-4 col-sm-3\">\n            <button ng-show=\"title=='Add'\" type=\"submit\" ng-click=\"addContact(name,email,tel)\" class=\"btn btn-outline btn-lg btn-block\">Submit</button>\n            <button ng-show=\"title=='Edit'\" type=\"submit\" ng-click=\"editContact(id , name , email , tel)\" class=\"btn btn-outline btn-lg btn-block\">Submit</button>\n        </div>\n        <div class=\"col-sm-3\">\n            <a ui-sref=\"home\" class=\"btn btn-outline btn-lg btn-block\">Cancel</a>\n        </div>\n    </div>\n</form>"
+module.exports = "<h2 class=\"page-header text-center\">{{title}} Contact</h2>\n<form #f=\"ngForm\" role=\"form\" class=\"form-horizontal contract-form\">\n    <div class=\"form-group\">\n        <label class=\"col-sm-4 control-label\">Full name:</label>\n        <div class=\"col-sm-6\">\n            <input type=\"text\" class=\"form-control contact-name-input\"\n                   [(ngModel)]=\"contact.name\" name=\"contactName\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-4 control-label\">Email address:</label>\n        <div class=\"col-sm-6\">\n            <input type=\"text\" class=\"form-control contact-email-input\" ng-model=\"email\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-4 control-label\">Telephone number:</label>\n        <div class=\"col-sm-6\">\n            <input type=\"text\" class=\"form-control contact-tel-input\" ng-model=\"tel\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <div class=\"col-sm-offset-4 col-sm-3\">\n            <button ng-show=\"title=='Add'\" type=\"submit\" ng-click=\"addContact(name,email,tel)\" class=\"btn btn-outline btn-lg btn-block\">Submit</button>\n            <button ng-show=\"title=='Edit'\" type=\"submit\" ng-click=\"editContact(id , name , email , tel)\" class=\"btn btn-outline btn-lg btn-block\">Submit</button>\n        </div>\n        <div class=\"col-sm-3\">\n            <a ui-sref=\"home\" class=\"btn btn-outline btn-lg btn-block\">Cancel</a>\n        </div>\n    </div>\n</form>\n"
 
 /***/ },
 /* 519 */

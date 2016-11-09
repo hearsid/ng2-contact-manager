@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { ContactsComponent } from './contacts.component';
 import { ContactsRoutingModule } from './contacts-routing.module';
@@ -11,7 +12,8 @@ import { NewContactsComponent } from "../new_contact/newContact.component";
     imports: [
         ContactsRoutingModule,
         NewContactRoutingModule,
-        BrowserModule
+        BrowserModule,
+        FormsModule
     ],
     declarations: [
         ContactsComponent,

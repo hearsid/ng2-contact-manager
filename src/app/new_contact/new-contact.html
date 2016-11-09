@@ -1,9 +1,10 @@
 <h2 class="page-header text-center">{{title}} Contact</h2>
-<form role="form" class="form-horizontal contract-form">
+<form #f="ngForm" role="form" class="form-horizontal contract-form">
     <div class="form-group">
         <label class="col-sm-4 control-label">Full name:</label>
         <div class="col-sm-6">
-            <input type="text" class="form-control contact-name-input" ng-model="name">
+            <input type="text" class="form-control contact-name-input"
+                   [(ngModel)]="contact.name" name="contactName">
         </div>
     </div>
     <div class="form-group">
