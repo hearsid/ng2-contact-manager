@@ -5,20 +5,26 @@ import { Contact } from '../contact/contact';
 import { ContactService } from '../contact/contact.service';
 @Component({
     selector: 'new-contact',
-    templateUrl: 'new-contact.html',
-    providers:[ContactService]
+    templateUrl: 'new-contact.html'
 })
-export class NewContactsComponent implements OnInit{
+export class NewContactsComponent implements OnInit {
 
     title = 'List of contacts';
     contacts: Contact[];
     selectedContact: Contact;
-    constructor(private contactService: ContactService) { }
+    navigated: boolean;
+    contact: Contact;
+    constructor(
+            private contactService: ContactService,
+            private router: Router,
+            private route: ActivatedRoute
+            ) { }
 
     ngOnInit(): void {
       this.route.params.forEach((params: Params) => {
-        if (params['contact'] !== undefined) {
-          let contact = +params['contact'];
+      debugger;
+        if (params['id'] !== undefined) {
+          this.contact = this.contactService.activeContact;
           this.navigated = true;
         } else {
           this.navigated = false;

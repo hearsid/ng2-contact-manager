@@ -20,10 +20,12 @@ export class ContactComponent implements OnInit {
         private route: ActivatedRoute) {
     }
 
-    edit(): void {
-      this.router.navigate(['/newContact', this.contact]);
+    edit(): void { debugger; 
+      this.contactService.activeContact = this.contact ;
+      this.router.navigate(['/newContact', this.contact.id]);
     }
 
+    ngOnInit(): void {}
 
 
 }

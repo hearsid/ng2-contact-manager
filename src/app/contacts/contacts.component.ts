@@ -5,8 +5,7 @@ import { Contact } from '../contact/contact';
 import { ContactService } from '../contact/contact.service';
 @Component({
     selector: 'contacts',
-    templateUrl: 'contacts.html',
-    providers:[ContactService]
+    templateUrl: 'contacts.html'
 })
 export class ContactsComponent implements OnInit{
 
@@ -25,6 +24,8 @@ export class ContactsComponent implements OnInit{
     }
 
     addContact(): void {
+      // set active component to null to determine edit/add
+      this.contactService.activeContact = new Contact() ;
       this.router.navigate(['/newContact']);
     }
 }

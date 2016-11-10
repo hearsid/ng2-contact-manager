@@ -8,7 +8,7 @@ import { ContactsModule } from './contacts/contacts.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Cache } from './universal-cache';
-
+import { ContactService } from './contact/contact.service';
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [ AppComponent ],
@@ -25,7 +25,8 @@ import { Cache } from './universal-cache';
   providers: [
     { provide: 'isBrowser', useValue: isBrowser },
     { provide: 'isNode', useValue: isNode },
-    Cache
+    Cache,
+    ContactService
   ]
 
 })
