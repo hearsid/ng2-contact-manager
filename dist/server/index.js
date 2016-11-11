@@ -292,7 +292,6 @@ var NewContactsComponent = (function () {
     NewContactsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.route.params.forEach(function (params) {
-            debugger;
             if (params['id'] !== undefined) {
                 _this.gettingEdited = true;
                 _this.contact = _this.contactService.activeContact;
@@ -308,9 +307,16 @@ var NewContactsComponent = (function () {
     /**
     * @description Add the new contact to the
     **/
-    NewContactsComponent.prototype.add = function () {
+    NewContactsComponent.prototype.add = function (contact) {
+        this.contactService.addNewContact(contact);
+        this.router.navigate(['/contacts']);
     };
-    NewContactsComponent.prototype.edit = function () {
+    NewContactsComponent.prototype.edit = function (contact) {
+        this.contactService.editContact(contact);
+        this.router.navigate(['/contacts']);
+    };
+    NewContactsComponent.prototype.cancel = function () {
+        this.router.navigate(['/contacts']);
     };
     NewContactsComponent = __decorate([
         core_1.Component({
@@ -643,7 +649,6 @@ var ContactComponent = (function () {
         this.navigated = false; // true if navigated here
     }
     ContactComponent.prototype.edit = function () {
-        debugger;
         this.contactService.activeContact = this.contact;
         this.router.navigate(['/newContact', this.contact.id]);
     };
@@ -1064,7 +1069,7 @@ module.exports = "<h2 class=\"page-header text-center\">{{title}}</h2>\n<p class
 /* 35 */
 /***/ function(module, exports) {
 
-module.exports = "<h2 class=\"page-header text-center\">{{title}} Contact</h2>\n<form #f=\"ngForm\" role=\"form\" class=\"form-horizontal contract-form\">\n    <div class=\"form-group\">\n        <label class=\"col-sm-4 control-label\">Full name:</label>\n        <div class=\"col-sm-6\">\n            <input type=\"text\" class=\"form-control contact-name-input\"\n                   [(ngModel)]=\"contact.name\" name=\"contactName\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-4 control-label\">Email address:</label>\n        <div class=\"col-sm-6\">\n            <input type=\"text\" class=\"form-control contact-email-input\"\n                   [(ngModel)]=\"contact.email\" name=\"email\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-4 control-label\">Telephone number:</label>\n        <div class=\"col-sm-6\">\n            <input type=\"text\" class=\"form-control contact-tel-input\"\n                   [(ngModel)]=\"contact.tel\" name=\"tel\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <div class=\"col-sm-offset-4 col-sm-3\">\n            <button *ngIf=\"gettingEdited\"  type=\"submit\"\n            (click)=\"addContact(name,email,tel)\"\n            class=\"btn btn-outline btn-lg btn-block\">Submit</button>\n            <button *ngIf=\"!gettingEdited\" type=\"submit\"\n            (click)=\"editContact(id , name , email , tel)\"\n            class=\"btn btn-outline btn-lg btn-block\">Submit</button>\n        </div>\n        <div class=\"col-sm-3\">\n            <a ui-sref=\"home\" class=\"btn btn-outline btn-lg btn-block\">Cancel</a>\n        </div>\n    </div>\n</form>\n"
+module.exports = "<h2 class=\"page-header text-center\">{{title}} Contact</h2>\n<form #f=\"ngForm\" role=\"form\" class=\"form-horizontal contract-form\">\n    <div class=\"form-group\">\n        <label class=\"col-sm-4 control-label\">Full name:</label>\n        <div class=\"col-sm-6\">\n            <input type=\"text\" class=\"form-control contact-name-input\"\n                   [(ngModel)]=\"contact.name\" name=\"contactName\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-4 control-label\">Email address:</label>\n        <div class=\"col-sm-6\">\n            <input type=\"text\" class=\"form-control contact-email-input\"\n                   [(ngModel)]=\"contact.email\" name=\"email\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <label class=\"col-sm-4 control-label\">Telephone number:</label>\n        <div class=\"col-sm-6\">\n            <input type=\"text\" class=\"form-control contact-tel-input\"\n                   [(ngModel)]=\"contact.tel\" name=\"tel\">\n        </div>\n    </div>\n    <div class=\"form-group\">\n        <div class=\"col-sm-offset-4 col-sm-3\">\n            <button *ngIf=\"!gettingEdited\"  type=\"submit\"\n            (click)=\"add(contact)\"\n            class=\"btn btn-outline btn-lg btn-block\">Add</button>\n            <button *ngIf=\"gettingEdited\" type=\"submit\"\n            (click)=\"edit(contact)\"\n            class=\"btn btn-outline btn-lg btn-block\">Save</button>\n        </div>\n        <div class=\"col-sm-3\">\n            <a (click)=\"cancel()\" class=\"btn btn-outline btn-lg btn-block\">Cancel</a>\n        </div>\n    </div>\n</form>\n"
 
 /***/ },
 /* 36 */

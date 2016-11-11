@@ -23,7 +23,6 @@ export class NewContactsComponent implements OnInit {
 
     ngOnInit(): void {
       this.route.params.forEach((params: Params) => {
-      debugger;
         if (params['id'] !== undefined) {
           this.gettingEdited = true;
           this.contact = this.contactService.activeContact;
@@ -39,11 +38,20 @@ export class NewContactsComponent implements OnInit {
     /**
     * @description Add the new contact to the
     **/
-    add() : void {
+    add(contact: Contact) : void {
+      this.contactService.addNewContact(contact);
+      this.router.navigate(['/contacts']);
 
     }
 
-    edit(): void {
+    edit(contact: Contact): void {
+      this.contactService.editContact(contact);
+      this.router.navigate(['/contacts']);
+
+    }
+
+    cancel() {
+    this.router.navigate(['/contacts']);
 
     }
 

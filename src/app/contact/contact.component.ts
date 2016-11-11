@@ -20,7 +20,7 @@ export class ContactComponent implements OnInit {
         private route: ActivatedRoute) {
     }
 
-    edit(): void { debugger; 
+    edit(): void { 
       this.contactService.activeContact = this.contact ;
       this.router.navigate(['/newContact', this.contact.id]);
     }
