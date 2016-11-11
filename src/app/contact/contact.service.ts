@@ -22,6 +22,9 @@ export class ContactService {
     }
 
     addNewContact(contact: Contact) : void {
+      // append one of the six image in the added contact
+      var randomNumber = Math.floor(Math.random() * 6) + 1 ;
+      contact.imageId = randomNumber;
       this.contacts.push(contact);
     }
 
