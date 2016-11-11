@@ -10,7 +10,7 @@ import {ContactService} from "./contact.service";
 })
 export class ContactComponent implements OnInit {
     @Input() contact: Contact;
-    @Output() close = new EventEmitter();
+    @Output() delete = new EventEmitter();
     error: any;
     navigated = false; // true if navigated here
 
@@ -20,10 +20,16 @@ export class ContactComponent implements OnInit {
         private route: ActivatedRoute) {
     }
 
-    edit(): void { 
+    edit(): void {
       this.contactService.activeContact = this.contact ;
       this.router.navigate(['/newContact', this.contact.id]);
     }
+
+    removeContact() : void {
+      this.delete.emit(this.contact);
+    }
+
+
 
     ngOnInit(): void {}
 

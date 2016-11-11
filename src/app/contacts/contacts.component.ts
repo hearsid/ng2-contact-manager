@@ -23,6 +23,11 @@ export class ContactsComponent implements OnInit{
         this.selectedContact = contact;
     }
 
+    delete(contact: Contact): void { 
+        this.contactService.deleteContact(contact);
+        this.getContacts();
+    }
+
     addContact(): void {
       // set active component to null to determine edit/add
       this.contactService.activeContact = new Contact() ;

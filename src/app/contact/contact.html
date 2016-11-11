@@ -6,7 +6,7 @@
         {{contact.name}}
         <small>
             <a (click)="edit()"><span class="glyphicon glyphicon-pencil"></span></a>
-            <a ng-click="deleteContact($index)" class="delete-contract">
+            <a (click)="removeContact()">
                 <span class="glyphicon glyphicon-trash"></span>
             </a>
         </small>

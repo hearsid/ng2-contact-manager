@@ -9,6 +9,11 @@ export class ContactService {
     contacts: Contact[];
     private _activeContact : Contact;
     getContacts(): Promise<Contact[]> {
+    // if we already have the contacts don't make the api call
+    if(this.contacts) {
+      return Promise.resolve(this.contacts);
+    }
+
     var promise = new Promise(function(resolve, reject) {
           this.contacts = CONTACTS;
           resolve(CONTACTS);
@@ -28,6 +33,16 @@ export class ContactService {
 
            return obj;
        })
+    }
+
+    deleteContact(contact: Contact) {
+        this.contacts = this.contacts.filter(function(obj) {
+              if(obj.id == contact.id){
+                return false;
+              }
+
+              return true;
+        });
     }
 
     get activeContact(): Contact {
