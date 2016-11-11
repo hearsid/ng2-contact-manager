@@ -13,6 +13,7 @@ export class NewContactsComponent implements OnInit {
     contacts: Contact[];
     selectedContact: Contact;
     navigated: boolean;
+    gettingEdited: boolean;
     contact: Contact;
     constructor(
             private contactService: ContactService,
@@ -24,13 +25,26 @@ export class NewContactsComponent implements OnInit {
       this.route.params.forEach((params: Params) => {
       debugger;
         if (params['id'] !== undefined) {
+          this.gettingEdited = true;
           this.contact = this.contactService.activeContact;
           this.navigated = true;
         } else {
+          this.gettingEdited = false;
           this.navigated = false;
           this.contact = new Contact();
         }
       });
+    }
+
+    /**
+    * @description Add the new contact to the
+    **/
+    add() : void {
+
+    }
+
+    edit(): void {
+
     }
 
 }
