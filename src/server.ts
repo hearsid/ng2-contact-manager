@@ -15,6 +15,7 @@ import { createEngine } from 'angular2-express-engine';
 
 // App
 import { MainModule } from './app/app.node.module';
+import { CONTACTS } from './app/contact/mock-contacts';
 
 // enable prod for faster renders
 // enableProdMode();
@@ -62,6 +63,22 @@ app.get('/home/*', ngApp);
 app.get('/contacts', ngApp);
 app.get('/contacts/*', ngApp);
 
+app.get('/getContacts', function(req, res) { debugger;
+  var numberOfContacts = req.query.no_of_contacts;
+  res.setHeader('Content-Type', 'application/json');
+  var contacts = [];
+  // there are six contacts initially
+  for(let i =0 ; i< Math.floor(numberOfContacts/6) ; i++) {
+    contacts = contacts.concat(CONTACTS);
+  }
+
+  // add more contacts based on remainder
+  for(let i=0; i< (numberOfContacts%6) ; i++ ) {
+     contacts.push(CONTACTS[i]);
+  }
+  console.log(contacts.length);
+  res.status(200).send(contacts);
+});
 
 app.get('*', function(req, res) {
   res.setHeader('Content-Type', 'application/json');
