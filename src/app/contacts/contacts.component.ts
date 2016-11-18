@@ -40,11 +40,7 @@ export class ContactsComponent implements OnInit, OnDestroy{
   }
     getContacts(total: number ): void {
       //  this.contactService.getContacts().then(contacts => { this.contacts = contacts });
-      debugger;
-      if(window) {
-        console.log(this.contacts);
-        return;
-      }
+      
       this.contactService.getContactList(total)
       .subscribe(
         contacts => {
