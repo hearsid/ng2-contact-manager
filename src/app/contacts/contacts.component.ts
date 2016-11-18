@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
+import {Subscription } from 'rxjs';
+import 'rxjs/Rx';
+import 'rxjs/add/operator/switchMap';
 
 import { Contact } from '../contact/contact';
 import { ContactService } from '../contact/contact.service';
@@ -7,25 +10,59 @@ import { ContactService } from '../contact/contact.service';
     selector: 'contacts',
     templateUrl: 'contacts.html'
 })
-export class ContactsComponent implements OnInit{
+export class ContactsComponent implements OnInit, OnDestroy{
 
     title = 'List of contacts';
     contacts: Contact[];
     selectedContact: Contact;
-    constructor(private router: Router, private contactService: ContactService) { }
-    getContacts(): void {
-        this.contactService.getContacts().then(contacts => { this.contacts = contacts });
+    private subscription: Subscription;
+    private total_contacts : number;
+
+    constructor(private router: Router,
+                private contactService: ContactService,
+                private route: ActivatedRoute) {
+
     }
-    ngOnInit(): void {
-        this.getContacts();
+    ngOnInit() {
+    // subscribe to router event
+                      this.subscription = this.route.queryParams.subscribe(
+                        (param: Params) => {
+                          let total_contacts = +param['no_of_contacts']; // toInt
+                          this.total_contacts = Number(total_contacts);
+                          this.getContacts(this.total_contacts);
+                          console.log(this.total_contacts);
+                        });
+  }
+
+  ngOnDestroy() {
+    // prevent memory leak by unsubscribing
+    this.subscription.unsubscribe();
+  }
+    getContacts(total: number ): void {
+      //  this.contactService.getContacts().then(contacts => { this.contacts = contacts });
+      debugger;
+      if(window) {
+        console.log(this.contacts);
+        return;
+      }
+      this.contactService.getContactList(total)
+      .subscribe(
+        contacts => {
+        console.log(contacts);
+        this.contacts = contacts;
+        },
+        error => console.error('Error: ' + error),
+        () => console.log('Completed!')
+      );
     }
+
     onSelect(contact: Contact): void {
         this.selectedContact = contact;
     }
 
-    delete(contact: Contact): void { 
+    delete(contact: Contact): void {
         this.contactService.deleteContact(contact);
-        this.getContacts();
+    //    this.getContacts();
     }
 
     addContact(): void {
