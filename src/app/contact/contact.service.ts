@@ -5,6 +5,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import {Subscription } from 'rxjs';
+import { ApiService } from '../api';
 
 import { Contact } from './contact';
 import { CONTACTS } from './mock-contacts';
@@ -16,7 +17,8 @@ export class ContactService {
     private _activeContact : Contact;
 
     constructor (private http: Http,
-                 private route: ActivatedRoute) {
+                 private route: ActivatedRoute,
+                 private apiService: ApiService) {
 
                  }
 
@@ -39,8 +41,10 @@ export class ContactService {
 
     getContactList(noOfContacts: number):Observable<Contact[]> {
     var url = '/getContacts?no_of_contacts='+noOfContacts;
-    return this.http.get(url)
-      .map(response => response.json());
+  //  return this.http.get(url)
+  //    .map(response => response.json());
+
+        return this.apiService.getModel(url);
       }
 
     private extractData(res: Response) {
