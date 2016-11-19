@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Cache } from './universal-cache';
 import { ContactService } from './contact/contact.service';
+import { ApiService } from './api';
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [ AppComponent ],
@@ -26,7 +27,8 @@ import { ContactService } from './contact/contact.service';
     { provide: 'isBrowser', useValue: isBrowser },
     { provide: 'isNode', useValue: isNode },
     Cache,
-    ContactService
+    ContactService,
+    ApiService
   ]
 
 })
