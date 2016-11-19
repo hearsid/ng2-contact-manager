@@ -5,11 +5,12 @@ import {ContactService} from "./contact.service";
 
 @Component({
     selector: 'contact',
-    templateUrl: 'contact.html',
+    templateUrl: 'contact.html'
 
 })
 export class ContactComponent implements OnInit {
     @Input() contact: Contact;
+    @Input() index: number;
     @Output() delete = new EventEmitter();
     error: any;
     navigated = false; // true if navigated here
@@ -25,8 +26,8 @@ export class ContactComponent implements OnInit {
       this.router.navigate(['/newContact', this.contact.id]);
     }
 
-    removeContact() : void {
-      this.delete.emit(this.contact);
+    removeContact(index: number) : void {
+      this.delete.emit(index);
     }
 
 

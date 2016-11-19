@@ -40,11 +40,11 @@ export class ContactsComponent implements OnInit, OnDestroy{
   }
     getContacts(total: number ): void {
       //  this.contactService.getContacts().then(contacts => { this.contacts = contacts });
-      
+
       this.contactService.getContactList(total)
       .subscribe(
         contacts => {
-        console.log(contacts);
+        this.contactService.contacts = contacts ;
         this.contacts = contacts;
         },
         error => console.error('Error: ' + error),
@@ -56,8 +56,8 @@ export class ContactsComponent implements OnInit, OnDestroy{
         this.selectedContact = contact;
     }
 
-    delete(contact: Contact): void {
-        this.contactService.deleteContact(contact);
+    delete(index: number): void {
+        this.contactService.deleteContact(index);
     //    this.getContacts();
     }
 

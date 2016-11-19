@@ -1,4 +1,4 @@
-<div class="thumbnail">
+<div class="thumbnail"> 
     <img class="media-object contact-image" src="assets/img/faces/{{contact.id || contact.imageId}}.jpg">
 </div>
 <div class="media-heading">
@@ -6,7 +6,7 @@
         {{contact.name}}
         <small>
             <a (click)="edit()"><span class="glyphicon glyphicon-pencil"></span></a>
-            <a (click)="removeContact()">
+            <a (click)="removeContact(index)">
                 <span class="glyphicon glyphicon-trash"></span>
             </a>
         </small>

@@ -83,14 +83,8 @@ export class ContactService {
        })
     }
 
-    deleteContact(contact: Contact) {
-        this.contacts = this.contacts.filter(function(obj) {
-              if(obj.id == contact.id){
-                return false;
-              }
-
-              return true;
-        });
+    deleteContact(index: number) {
+         this.contacts.splice(index, 1);
     }
 
     get activeContact(): Contact {
