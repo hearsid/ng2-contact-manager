@@ -37,6 +37,7 @@ app.use(bodyParser.json());
 // Serve static files
 app.use('/assets', express.static(path.join(__dirname, 'assets'), {maxAge: 30}));
 app.use(express.static(path.join(ROOT, 'dist/client'), {index: false}));
+app.use('/node_modules',  express.static(__dirname + '/../node_modules'));
 
 
 import { serverApi } from './backend/api';
@@ -53,6 +54,14 @@ function ngApp(req, res) {
     originUrl: 'http://localhost:3000'
   });
 }
+
+// allow api access from another port
+app.all('/*', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+});
+
 // Routes with html5pushstate
 // ensure routes match client-side-app
 app.get('/', ngApp);
