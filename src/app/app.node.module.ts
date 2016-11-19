@@ -9,8 +9,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UniversalModule, isBrowser, isNode } from 'angular2-universal/node'; // for AoT we need to manually split universal packages
 
-import { HomeModule } from './home/home.module';
-import { AboutModule } from './about/about.module';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Cache } from './universal-cache';
@@ -23,10 +22,7 @@ import {ContactsModule} from "./contacts/contacts.module";
     UniversalModule, // NodeModule, NodeHttpModule, and NodeJsonpModule are included
     FormsModule,
 
-    HomeModule,
-    AboutModule,
     ContactsModule,
-
     AppRoutingModule
   ],
   providers: [

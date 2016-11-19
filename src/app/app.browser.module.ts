@@ -2,14 +2,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { UniversalModule, isBrowser, isNode } from 'angular2-universal/browser'; // for AoT we need to manually split universal packages
 
-import { HomeModule } from './home/home.module';
-import { AboutModule } from './about/about.module';
+
 import { ContactsModule } from './contacts/contacts.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { Cache } from './universal-cache';
-import { ContactService } from './contact/contact.service';
-import { ApiService } from './api';
+
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [ AppComponent ],
@@ -17,8 +15,6 @@ import { ApiService } from './api';
     UniversalModule, // BrowserModule, HttpModule, and JsonpModule are included
     FormsModule,
 
-    HomeModule,
-    AboutModule,
     ContactsModule,
 
     AppRoutingModule
@@ -26,9 +22,7 @@ import { ApiService } from './api';
   providers: [
     { provide: 'isBrowser', useValue: isBrowser },
     { provide: 'isNode', useValue: isNode },
-    Cache,
-    ContactService,
-    ApiService
+    Cache
   ]
 
 })
