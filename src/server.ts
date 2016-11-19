@@ -7,7 +7,7 @@ import * as path from 'path';
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
-
+import * as compression from 'compression';
 // Angular 2
 import { enableProdMode } from '@angular/core';
 // Angular 2 Universal
@@ -18,7 +18,7 @@ import { MainModule } from './app/app.node.module';
 import { CONTACTS } from './app/contact/mock-contacts';
 
 // enable prod for faster renders
-// enableProdMode();
+ enableProdMode();
 
 const app = express();
 const ROOT = path.join(path.resolve(__dirname, '..'));
@@ -33,6 +33,7 @@ app.set('view engine', 'html');
 
 app.use(cookieParser('Angular 2 Universal'));
 app.use(bodyParser.json());
+app.use(compression());
 
 // Serve static files
 app.use('/assets', express.static(path.join(__dirname, 'assets'), {maxAge: 30}));
@@ -85,6 +86,7 @@ app.get('/getContacts', function(req, res) { debugger;
   for(let i=0; i< (numberOfContacts%6) ; i++ ) {
      contacts.push(CONTACTS[i]);
   }
+
   console.log(contacts.length);
   res.status(200).send(contacts);
 });
