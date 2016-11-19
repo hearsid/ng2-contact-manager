@@ -3,8 +3,8 @@
     <a (click)="addContact()" class="btn btn-lg btn-outline" >Add Contact</a>
 </p>
 <ul class="media-list row contacts-container">
-    <li *ngFor="let contact of contacts" class="my-repeat-animation contacts media col-md-6 col-lg-4">
-        {{contact.id}}
+    <li *ngFor="let contact of contacts;let i = index" class="my-repeat-animation contacts media col-md-6 col-lg-4">
+        {{i+1}}
         <contact [contact]="contact" (delete)="delete($event)"></contact>
 
     </li>
